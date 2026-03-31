@@ -1,18 +1,21 @@
-import { Locator, Page, expect} from "@playwright/test";
+import { Locator, Page, expect } from "@playwright/test";
 
 export class Countries {
-  readonly header: Locator;
-  readonly url='/est_paises.php'
+  readonly url = "/est_paises.php";
+  readonly countrySelector: Locator;
+  readonly countryHeader:Locator
 
   constructor(private readonly page: Page) {
-    this.header = page.locator("td.th1");
+    this.countrySelector = page.locator('select[name="lang"]')
+    this.countryHeader=page.locator('th1>b')
   }
 
-  async goTo(){
-    await this.page.goto(this.url)
+  async goTo() {
+    await this.page.goto(this.url);
   }
 
-  async expectHeaderVisible() {
-    await expect(this.header).toBeVisible();
+  async expectLanguageChange(value: string, header: string) {
+    await this.countrySelector.selectOption(value);
+    await expect(this.countryHeader).toHaveText(header)  
   }
 }
