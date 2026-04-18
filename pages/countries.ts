@@ -7,7 +7,7 @@ export class Countries {
 
   constructor(private readonly page: Page) {
     this.countrySelector = page.locator('select[name="lang"]')
-    this.countryHeader=page.locator('th1>b')
+    this.countryHeader=page.locator('th1>b')    
   }
 
   async goTo() {

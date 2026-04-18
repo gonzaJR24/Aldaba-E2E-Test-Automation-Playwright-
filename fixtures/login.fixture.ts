@@ -17,6 +17,10 @@ export const test = base.extend<MyFixtures>({
 
     //fill login fields
 
+    if (!process.env.EMAIL || !process.env.PASSWORD) {
+      throw new Error("Missing credentials in environment variables");
+    }
+
     await login.username.fill(process.env.EMAIL!);
     await login.password.fill(process.env.PASSWORD!);
 

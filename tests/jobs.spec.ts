@@ -9,7 +9,6 @@ test.describe("jobs window test suite", () => {
 
   test("verify existence of jobs", async ({ loggedPage }) => {
     await jobsObj.goTo();
-    const jobs = (await loggedPage.locator("a.ficha").allTextContents()).length;
-    await expect(jobs).toBeGreaterThan(0);
+    await expect(jobsObj.jobs).not.toHaveCount(0);
   });
 });

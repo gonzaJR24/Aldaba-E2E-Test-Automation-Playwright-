@@ -13,8 +13,8 @@ export class Home{
         this.header = page.getByText(/Portal de empleo y formación/i)
         this.countries=page.getByTitle(/países/i)
         this.customerService=page.getByTitle("Información y Atención al Cliente")
-        this.currency=page.locator('.fa-cart-shopping')
-        this.login = page.locator('button:has-text("Entrar")').first()
+        this.currency=page.locator('a[href="servicios_pre.php"]')
+        this.login = page.getByRole("button", {name:'Entrar'})
         this.registration=page.getByRole("button", {name:'Registrarse'})
         this.theme=page.getByTitle('Modo oscuro')
     }

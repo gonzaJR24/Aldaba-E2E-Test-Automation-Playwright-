@@ -8,7 +8,8 @@ export class JobPage {
 
   constructor(private readonly page: Page) {
     this.workday = page.locator('select[name="_jornadas"]');
-    this.jobs = page.locator('tr>td>h1>a>b');
+    this.jobs = page.locator('.ficha')
+    // this.jobs = page.locator('tr>td>h1>a>b');
     this.level = page.locator('select[name="_isco"]');
     this.jobsPosts = page.locator('[value="ver_ofertas.php?cv=1108648"]');
 
