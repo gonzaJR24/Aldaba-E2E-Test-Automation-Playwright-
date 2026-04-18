@@ -1,18 +1,75 @@
-## Testing Strategy
+# E2E Automation Project
 
-This project uses Playwright with TypeScript to implement end-to-end tests following the Page Object Model (POM).
+End-to-end testing project built with Playwright, using Page Object Model and CI integration via GitHub Actions.
 
-### Test Types
+---
 
-The test suite focuses on UI end-to-end validation to ensure that key user flows behave correctly in the browser.
+## 🚀 Tech Stack
+- Playwright
+- Node.js
+- GitHub Actions (CI)
+- Page Object Model (POM)
 
-Current tests cover:
-- Language switching in the countries section
-- Header validation after language selection
+---
+
+## 📁 Project Structure
+```
+├── .github/workflows   # CI pipelines (GitHub Actions)
+├── pages               # Page Object Models
+├── tests               # Test specs
+├── fixtures            # Test data setup
+├── data                # Static test data
+├── playwright-report   # HTML reports
+```
 
 ### Test Design Principles
 
-- **Page Object Model (POM)** is used to separate UI locators and actions from test logic.
-- **Reusable components** are implemented in page classes.
-- **Assertions are centralized** within page objects when appropriate.
-- Tests are written to be independent and reproducible.
+- Page Object Model to encapsulate page interactions
+- Tests focus on behavior, not implementation details
+- Reusable actions centralized in page classes
+- Independent and deterministic test execution
+
+---
+
+## Installation
+
+```
+npm install
+npx playwright install
+```
+
+
+## Running Tests
+
+Run all tests:
+
+```
+npx playwright test
+```
+
+Run tests in headed mode:
+
+```
+npx playwright test --headed
+```
+
+---
+## Test Reports
+
+Generate and open the HTML report:
+
+```
+npx playwright show-report
+```
+
+---
+## CI Pipeline
+
+Tests run automatically on:
+- Pull requests to `main`
+- Pushes to `main`
+
+Powered by GitHub Actions.
+
+## Author
+QA Engineer - Junior A. Gonzalez
