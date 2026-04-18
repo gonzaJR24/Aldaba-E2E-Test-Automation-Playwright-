@@ -1,6 +1,6 @@
 import { test, expect, Locator } from "@playwright/test";
 import { Home } from "../pages/home";
-import { menu } from "../data/menu-data";
+import { menu } from "../data/menu.data";
 
 test.describe("home tests", () => {
   let home: Home;

@@ -14,7 +14,7 @@ export class Home{
         this.countries=page.getByTitle(/países/i)
         this.customerService=page.getByTitle("Información y Atención al Cliente")
         this.currency=page.locator('.fa-cart-shopping')
-        this.login=page.getByRole("button", {name:'Entrar'})
+        this.login = page.locator('button:has-text("Entrar")').first()
         this.registration=page.getByRole("button", {name:'Registrarse'})
         this.theme=page.getByTitle('Modo oscuro')
     }

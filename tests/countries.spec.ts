@@ -1,7 +1,7 @@
 import test, { expect } from "@playwright/test";
 import { Countries } from "../pages/countries";
-import {languages} from '../data/language-data'
-import { CountryData } from "../data/countries-data";
+import {languages} from '../data/language.data'
+import { CountryData } from "../data/countries.data";
 
 test.describe("countries test suite", () => {
   let countries: Countries;
